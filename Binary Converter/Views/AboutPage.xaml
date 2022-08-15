@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Binary_Converter.Views.AboutPage"
+             xmlns:vm="clr-namespace:Binary_Converter.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">black</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label Text="Enter a binary number:" TextColor="Black"/>
+
+                <Entry x:Name="numEntry" x:DataType="x:Int64" BackgroundColor="Black" HorizontalTextAlignment="Center"></Entry>
+
+                <Button Clicked="Button_Clicked" Text="Convert"/>
+
+                <Label x:Name="Converted" Text="" TextColor="Black" FontSize="Header" HorizontalTextAlignment="Center"/>
+                
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
