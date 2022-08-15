@@ -17,7 +17,7 @@ namespace Binary_Converter.Views
             string num = numEntry.Text;
             long result = 0;
             for (int i = 0; i < num.Length; i++)
-            {
+            { 
                 if (num[num.Length - 1 - i] == '1')
                 {
                     result += Convert.ToInt64(Math.Pow(2, i));
